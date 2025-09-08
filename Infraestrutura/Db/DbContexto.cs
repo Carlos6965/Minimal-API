@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using minimal_api.Dominio.Entidades;
 using minimal_api.DTOs;
 
 namespace minimal_api.Infraestrutura.Db
@@ -23,6 +24,5 @@ namespace minimal_api.Infraestrutura.Db
 
         public DbSet<Administrador> Administradores { get; set; } = default!;
         public DbSet<Veiculo> Veiculos { get; set; } = default!;
-
     }
 }

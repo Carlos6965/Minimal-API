@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using minimal_api.Dominio.DTOs;
+using minimal_api.Dominio.Entidades;
 using minimal_api.DTOs;
 using minimal_api.Infraestrutura.Db;
 
@@ -25,9 +26,9 @@ namespace minimal_api.Dominio.Servicos
             _contexto.SaveChanges();
         }
 
-        public Veiculo? BuscaPorId(int id)
+        public Veiculo? BuscaPorId(int Id)
         {
-            return _contexto.Veiculos.Where(v => v.Id == id).FirstOrDefault();
+            return _contexto.Veiculos.FirstOrDefault(v => v.Id == Id);
         }
 
         public void Incluir(Veiculo veiculo)
@@ -46,7 +47,8 @@ namespace minimal_api.Dominio.Servicos
 
             int itensPorPagina = 10;
 
-            if (pagina != null) {
+            if (pagina != null)
+            {
                 query = query.Skip(((int)pagina - 1) * itensPorPagina).Take(itensPorPagina);
             }
             return query.ToList();

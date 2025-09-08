@@ -1,4 +1,5 @@
 using minimal_api.Dominio.DTOs;
+using minimal_api.Dominio.Entidades;
 using minimal_api.DTOs;
 
 namespace minimal_api.Dominio.Servicos
